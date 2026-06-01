@@ -41,7 +41,7 @@ public class PostController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    @Operation(summary = "게시글 수정", description = "특정 게시글의 내용을 수정합니다.")
+    @Operation(summary = "게시글 수정", description = "특정 게시글의 내용을 부분 수정합니다. title과 content중 수정되는것만 전송해도되고, 전체를 전송해도 괜찮습니다.")
     @PatchMapping("/{id}")
     public ResponseEntity<PostResponseDto> updatePost(
             @Parameter(description = "수정할 게시글 ID") @PathVariable Long id,
