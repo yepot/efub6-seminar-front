@@ -45,10 +45,10 @@ jobs:
       - name: Grant execute permission
         run: chmod +x ./gradlew
 
-      # Spring Boot 프로젝트 빌드
+      # Spring Boot 실행 jar를 깨끗하게 다시 생성
       # 테스트는 제외(-x test)
-      - name: Build with Gradle
-        run: ./gradlew build -x test
+      - name: Build boot jar with Gradle
+        run: ./gradlew clean bootJar -x test
 
       # Docker Hub 로그인
       # 이후 Docker Image Push를 위해 필요
@@ -101,6 +101,14 @@ jobs:
               --name efub6-seminar-front \
               -p 8080:8080 \
               ${{ secrets.DOCKER_REPO }}:latest
+
+            # 컨테이너가 실제로 살아 있는지 먼저 확인
+            sleep 5
+            test "$(sudo docker inspect -f '{{.State.Running}}' efub6-seminar-front)" = "true"
+
+            # 애플리케이션이 응답하는지 확인
+            curl -fsSI http://127.0.0.1:8080/
+            curl -fsSI http://127.0.0.1:8080/swagger-ui.html
 
             # 사용하지 않는 Docker 이미지 정리
             sudo docker image prune -f
