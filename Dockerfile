@@ -1,6 +1,6 @@
 # 사용할 base 이미지 선택
-# ec2 아키텍처가 arm64v8이라서 적절한 이미지 가져옴
-FROM arm64v8/eclipse-temurin:17-jdk-focal
+# amd64 서버와 arm64 서버 모두에서 사용할 수 있는 멀티 아키텍처 이미지
+FROM eclipse-temurin:17-jdk-focal
 
 # build/libs/ 에 있는 jar 파일을 JAR_FILE 변수에 저장
 ARG JAR_FILE=build/libs/*.jar

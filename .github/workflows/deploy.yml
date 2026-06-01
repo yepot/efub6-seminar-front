@@ -68,8 +68,8 @@ jobs:
           # 사용할 Dockerfile 위치
           file: ./Dockerfile
 
-          # EC2(t4g 계열 ARM 서버)용 이미지 생성
-          platforms: linux/arm64/v8
+          # 현재 EC2 호스트 아키텍처(amd64)에 맞는 이미지 생성
+          platforms: linux/amd64
 
           # Docker Hub에 Push 여부
           push: true
