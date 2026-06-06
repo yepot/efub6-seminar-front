@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.efub.frontSeminar.global.config.CorsConfigTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-06-01T01:17:11.792Z" hostname="yang-eunseoui-MacBookAir.local" time="0.015">
+<testsuite name="com.efub.frontSeminar.global.config.CorsConfigTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-06-06T13:55:11.044Z" hostname="yang-eunseoui-MacBookAir.local" time="0.585">
   <properties/>
-  <testcase name="preflightRequestFromAllowedOriginReturnsCorsHeaders()" classname="com.efub.frontSeminar.global.config.CorsConfigTest" time="0.015"/>
-  <system-out><![CDATA[2026-06-01T10:17:11.797+09:00 DEBUG 48372 --- [frontSeminar] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 1 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-2026-06-01T10:17:11.798+09:00 DEBUG 48372 --- [frontSeminar] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-06-01T10:17:11.798+09:00 DEBUG 48372 --- [frontSeminar] [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-06-01T10:17:11.799+09:00  INFO 48372 --- [frontSeminar] [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
-2026-06-01T10:17:11.799+09:00  INFO 48372 --- [frontSeminar] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-06-01T10:17:11.799+09:00  INFO 48372 --- [frontSeminar] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+  <testcase name="preflightRequestFromWildcardOriginPatternReturnsCorsHeaders()" classname="com.efub.frontSeminar.global.config.CorsConfigTest" time="0.569"/>
+  <system-out><![CDATA[22:55:11.436 [Test worker] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 9.0.1.Final
+22:55:11.597 [Test worker] INFO org.springframework.mock.web.MockServletContext -- Initializing Spring TestDispatcherServlet ''
+22:55:11.597 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Initializing Servlet ''
+22:55:11.599 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet -- Completed initialization in 1 ms
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -100,6 +100,7 @@ jobs:
             sudo docker run -d \
               --name efub6-seminar-front \
               -p 8080:8080 \
+              -e APP_CORS_ALLOWED_ORIGINS='*' \
               ${{ secrets.DOCKER_REPO }}:latest
 
             # 컨테이너가 실제로 살아 있는지 먼저 확인

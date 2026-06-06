@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.efub.frontSeminar.global.exception.GlobalExceptionHandlerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-06-01T01:17:11.808Z" hostname="yang-eunseoui-MacBookAir.local" time="0.004">
-  <properties/>
-  <testcase name="noResourceFoundExceptionReturnsNotFoundResponse()" classname="com.efub.frontSeminar.global.exception.GlobalExceptionHandlerTest" time="0.004"/>
-  <system-out><![CDATA[2026-06-01T10:17:11.809+09:00  WARN 48372 --- [frontSeminar] [    Test worker] c.e.f.g.e.GlobalExceptionHandler         : NoResourceFoundException: No static resource static resource for request '/missing'.
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

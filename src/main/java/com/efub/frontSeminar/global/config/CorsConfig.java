@@ -13,12 +13,12 @@ import java.util.List;
 @Configuration
 public class CorsConfig {
 
-    private final List<String> allowedOrigins;
+    private final List<String> allowedOriginPatterns;
 
     public CorsConfig(
-            @Value("${app.cors.allowed-origins:http://localhost:3000,http://127.0.0.1:3000,http://localhost:5173,http://127.0.0.1:5173}")
-            String[] allowedOrigins) {
-        this.allowedOrigins = Arrays.stream(allowedOrigins)
+            @Value("${app.cors.allowed-origins:*}")
+            String[] allowedOriginPatterns) {
+        this.allowedOriginPatterns = Arrays.stream(allowedOriginPatterns)
                 .map(String::trim)
                 .filter(origin -> !origin.isBlank())
                 .toList();
@@ -27,7 +27,7 @@ public class CorsConfig {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(allowedOrigins);
+        configuration.setAllowedOriginPatterns(allowedOriginPatterns);
         configuration.setAllowedMethods(List.of("GET", "POST", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);

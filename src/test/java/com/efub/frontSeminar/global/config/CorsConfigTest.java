@@ -12,17 +12,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class CorsConfigTest {
 
     @Test
-    void preflightRequestFromAllowedOriginReturnsCorsHeaders() throws Exception {
-        CorsConfig corsConfig = new CorsConfig(new String[]{"http://localhost:3000"});
+    void preflightRequestFromWildcardOriginPatternReturnsCorsHeaders() throws Exception {
+        CorsConfig corsConfig = new CorsConfig(new String[]{"*"});
         MockMvc mockMvc = MockMvcBuilders.standaloneSetup(new HomeController())
                 .addFilters(corsConfig.corsFilter())
                 .build();
 
         mockMvc.perform(options("/")
-                        .header("Origin", "http://localhost:3000")
+                        .header("Origin", "https://intern-preview.example.com")
                         .header("Access-Control-Request-Method", "GET"))
                 .andExpect(status().isOk())
-                .andExpect(header().string("Access-Control-Allow-Origin", "http://localhost:3000"))
+                .andExpect(header().string("Access-Control-Allow-Origin", "https://intern-preview.example.com"))
                 .andExpect(header().string("Access-Control-Allow-Credentials", "true"));
     }
 }
